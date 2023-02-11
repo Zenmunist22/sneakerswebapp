@@ -10,6 +10,7 @@ export default function Home() {sou
    <div>
      <h1>
         Sneaker Landing Page
+        Ish wuz here.
      </h1>
    </div>
  );
