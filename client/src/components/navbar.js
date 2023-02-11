@@ -31,13 +31,23 @@ export default function Navbar() {
          <ul className="navbar-nav">
             <li className="nav-item">
              <NavLink className="nav-link" to="/records">
-               List of Records
+               Meet the Team
              </NavLink>
            </li>
            <li className="nav-item">
              <NavLink className="nav-link" to="/create">
-               Create Record
+               Add a New Member 
              </NavLink>
+           </li>
+           <li className="nav-item">
+            <NavLink className="nav-link" to="/login">
+              Login
+            </NavLink>
+           </li>
+           <li className="nav-item">
+            <NavLink className="nav-link" to="/register">
+              Register
+            </NavLink>
            </li>
          </ul>
        </div>

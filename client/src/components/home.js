@@ -9,8 +9,9 @@ export default function Home() {
  return (
    <div>
      <h1>
-        Sneaker Landing Page
+        MUSHU Landing Page
         Ish wuz here.
+        Luis has arrived...
      </h1>
    </div>
  );
