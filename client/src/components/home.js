@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
  
-export default function Home() {sou
+export default function Home() {
 
  
  // This following section will display the table with the records of individuals.

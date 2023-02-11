@@ -66,8 +66,8 @@ const handleSubmit = async(event)=>{
                    <div className="col-md-6">
                     <form onSubmit={handleSubmit} method = "POST">
   <div class="mb-3">
-    <label for="name" class="form-label">Username</label>
-    <input type="text" class="form-control" id="name" name = "username" value={user.username} onChange = {handleInput}/>
+    <label for="name" class="form-label">Email address</label>
+    <input type="email" class="form-control" id="name" name = "email" value={user.email} onChange = {handleInput}/>
   </div>
   <div class="mb-3">
     <label for="exampleInputPassword1" class="form-label">Password</label>
@@ -75,9 +75,9 @@ const handleSubmit = async(event)=>{
   </div>
   <div class="mb-3 form-check">
     <input type="checkbox" class="form-check-input" id="exampleCheck1"/>
-    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+    <label class="form-check-label" for="exampleCheck1">Remember Me</label>
   </div>
-  <button type="submit" class="btn btn-primary">Submit</button>
+  <button type="submit" class="btn btn-primary">Register</button>
 </form>
                    </div>
                 </div>
