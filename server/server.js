@@ -1,5 +1,15 @@
 const express = require("express");
+const express = require('express');
+const bcryptjs = require('bcryptjs');
+const jwt = require('jsonwebtoken');
+const cookieParser = require('cookie-parser');
+
 const app = express();
+
+//Configure ENV file
+dotenv.config({path : './config.env'});
+require('./db/conn');
+
 const cors = require("cors");
 require("dotenv").config({ path: "./config.env" });
 const port = process.env.PORT || 5000;
@@ -62,7 +72,7 @@ app.post('/login', async(req, res)=>{
         if(isMatch){
           //Generate Token defined in user schema
           const token = await user.generateToken();
-          res.cookie("jwt", token {
+          res.cookie("jwt", token,{
             //expires token in 24 hours
             expires: new Date(Date.now()+86400000),
             httpOnly:true
