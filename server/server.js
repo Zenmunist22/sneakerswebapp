@@ -35,12 +35,10 @@ app.use(cookieParser());
 app.post('/register', async(req, res)=>{
   try{
     //Get body or Data
-    const username=req.body.username;
     const email=req.body.email;
     const password=req.body.password;
 
     const createUser = new Users({
-      username:username,
       email:email,
       password:password
     });
