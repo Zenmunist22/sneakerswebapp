@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const bcryptjs = require(bcryptjs);
+const bcryptjs = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 
 //User Schema or Document Structure

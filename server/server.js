@@ -1,5 +1,4 @@
 const express = require("express");
-const express = require('express');
 const bcryptjs = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const cookieParser = require('cookie-parser');
@@ -7,7 +6,7 @@ const cookieParser = require('cookie-parser');
 const app = express();
 
 //Configure ENV file
-dotenv.config({path : './config.env'});
+require("dotenv").config({ path: "./config.env" });
 require('./db/conn');
 
 const cors = require("cors");
@@ -21,11 +20,11 @@ app.use(require("./routes/record"));
 const dbo = require("./db/conn");
 
 //Configure ENV File and Require Connection File
-DeviceMotionEvent.config({path : './config.env'});
+require("dotenv").config({ path: "./config.env" });
 require('./db/conn');
 
 //Require Model
-const Users = require('./models/userSchema');
+const Users = require('./db/models/userSchema');
 
 //This Method is Used to Get Data and Cookies from the FrontEnd
 app.use(express.json());
