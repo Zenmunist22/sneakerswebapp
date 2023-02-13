@@ -40,9 +40,9 @@ recordRoutes.route("/record/:id").get(function (req, res) {
 recordRoutes.route("/register/add").post(function (req, response) {
  let db_connect = dbo.getDb();
  let myobj = {
-   name: req.body.username,
-   position: req.body.email,
-   level: req.body.password,
+   username: req.body.username,
+   email: req.body.email,
+   password: req.body.password,
  };
  db_connect.collection("UserData").insertOne(myobj, function (err, res) {
    if (err) throw err;
