@@ -29,13 +29,13 @@ const handleSubmit = async(event)=>{
   //Object Destructuring
   const{username, email,password} = user;
   try{
-    const res = await fetch ('/register',{
+    const res = await fetch ('http://localhost:5000/register/add',{
       method: "POST",
       headers: {
         "Content-Type" : "application/json"
       },
       body : JSON.stringify({
-        username, email, password
+        email, password
       })
     })
 
