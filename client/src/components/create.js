@@ -35,7 +35,7 @@ export default function Create() {
      return;
    });
  
-   setForm({ name: "", position: "", level: "" });
+   setForm({ username: "", email: "", password: "" });
    navigate("/");
  }
  

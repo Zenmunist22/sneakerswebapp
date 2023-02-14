@@ -1,5 +1,14 @@
-const express = require("express");
+const express = require('express');
+const bcryptjs = require('bcryptjs');
+const jwt = require('jsonwebtoken');
+const cookieParser = require('cookie-parser');
+
 const app = express();
+
+//Configure ENV file
+require("dotenv").config({ path: "./config.env" });
+require('./db/conn');
+
 const cors = require("cors");
 require("dotenv").config({ path: "./config.env" });
 const port = process.env.PORT || 5000;
@@ -11,11 +20,11 @@ app.use(require("./routes/record"));
 const dbo = require("./db/conn");
 
 //Configure ENV File and Require Connection File
-DeviceMotionEvent.config({path : './config.env'});
+require("dotenv").config({ path: "./config.env" });
 require('./db/conn');
 
 //Require Model
-const Users = require('./models/userSchema');
+const Users = require('./db/models/userSchema');
 
 //This Method is Used to Get Data and Cookies from the FrontEnd
 app.use(express.json());
@@ -26,12 +35,10 @@ app.use(cookieParser());
 app.post('/register', async(req, res)=>{
   try{
     //Get body or Data
-    const username=req.body.username;
     const email=req.body.email;
     const password=req.body.password;
 
     const createUser = new Users({
-      username:username,
       email:email,
       password:password
     });
@@ -62,7 +69,7 @@ app.post('/login', async(req, res)=>{
         if(isMatch){
           //Generate Token defined in user schema
           const token = await user.generateToken();
-          res.cookie("jwt", token {
+          res.cookie("jwt", token,{
             //expires token in 24 hours
             expires: new Date(Date.now()+86400000),
             httpOnly:true

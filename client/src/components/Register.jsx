@@ -9,9 +9,8 @@ const Register =()=>  {
   const navigate = useNavigate()
 
   const [user, setUser] = useState({
-    username : "",
-    email: "",
-    password: ""
+    email: '',
+    password: ''
   });
 ;
 
@@ -27,15 +26,15 @@ const handleInput = (event) => {
 const handleSubmit = async(event)=>{
   event.preventDefault();
   //Object Destructuring
-  const{username, email,password} = user;
+  const{ email,password} = user;
   try{
-    const res = await fetch ('/register',{
+    const res = await fetch ('http://localhost:5000/register/add',{
       method: "POST",
       headers: {
         "Content-Type" : "application/json"
       },
       body : JSON.stringify({
-        username, email, password
+        email, password
       })
     })
 
